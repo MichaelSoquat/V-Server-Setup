@@ -41,6 +41,7 @@ After that you get this message:
 ![image](https://github.com/MichaelSoquat/V-Server-Setup/assets/97191601/e076fc0b-f680-4617-923c-e60e326b9107)
 
 You have to enter your password one last time. After that you get the successful message:
+
 ![image](https://github.com/MichaelSoquat/V-Server-Setup/assets/97191601/2c00a545-f969-4b09-a7ee-288e8a00bb57)
 
 Now you can enter "ssh -i <path/to/your/key>.pub <user>@<hostname>"
@@ -50,11 +51,12 @@ and you are successfully logged in to your server with using the ssh key
 
 1. Adjust the configuration under "/etc/ssh/sshd_config" with nano <path/to/config>
 2. Find and edit the line "#PasswordAuthentication yes" to that "PasswordAuthentication no"
+   
 ![image](https://github.com/MichaelSoquat/V-Server-Setup/assets/97191601/b0ddeacd-16e0-466a-97d8-15a2d8bd36f4)
 
-3. Save the file and exit
-4. Restart the "sshd" service to reload the configuration. The command is: "sudo systemctl restart ssh.service
-5. Now you cannot connect with your password anymore. You can test it with: "ssh -o PubkeyAuthentication=no <user>@<hostname>
+4. Save the file and exit
+5. Restart the "sshd" service to reload the configuration. The command is: "sudo systemctl restart ssh.service
+6. Now you cannot connect with your password anymore. You can test it with: "ssh -o PubkeyAuthentication=no <user>@<hostname>
    If all worked correctly you get the permission denied message:
    
 ![image](https://github.com/MichaelSoquat/V-Server-Setup/assets/97191601/b611fc1f-bb26-456a-b246-2fd5d895baf4)
@@ -65,8 +67,10 @@ and you are successfully logged in to your server with using the ssh key
 2. If the nginx isnt installed yet please run the following command "sudo apt install nginx -y"
 3. With the command "systemctl status nginx.service" you can see the status of your nginx.
    The output should be an active nginx:
+   
    ![image](https://github.com/MichaelSoquat/V-Server-Setup/assets/97191601/7310bb0b-6cae-4fa4-b7d9-90f76603c405)
-4. If you start your browser now and enter your ip address you see the nginx start site
+   
+5. If you start your browser now and enter your ip address you see the nginx start site
 
 ### 6. Configure nginx
 
