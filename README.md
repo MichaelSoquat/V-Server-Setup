@@ -81,8 +81,11 @@ We want to change the nginx config to see our own website:
 3. Here we crate an html file with `sudo nano /var/www/alternatives/alternate-index.html`
 4. You can add HTML code to that file for example "Start of my website" and save the file
 5. Add a configuration  under `/etc/nginx/sites-enabled/` named "alternatives" with `sudo nano /etc/nginx/sites-enabled/alternatives`
-   and add the following settings:
+   and add the following settings<sup>1<sup>:
+7. Restart the nginx with `sudo service nginx restart`
+8. If you open your browser and enter ip address/8081  you can see your own start site
 
+<sup>1<sup>Nginx configuration might look like this:
 ```
 server {
   listen 8081;
@@ -94,9 +97,6 @@ server {
   }
 }
 ```
-
-7. Restart the nginx with `sudo service nginx restart`
-8. If you open your browser and enter ip address/8081  you can see your own start site
 
 ### 7. Alias
 Define a shell alias to avoid the long ssh login to your server like `ssh -i <path/to/your/key>.pub <user>@<hostname>`
